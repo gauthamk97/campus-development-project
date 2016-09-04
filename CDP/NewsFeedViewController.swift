@@ -35,15 +35,19 @@ class NewsFeedViewController: UIViewController {
         
     }
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = .Default
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
     }
     
     required init?(coder aDecoder: NSCoder) {
